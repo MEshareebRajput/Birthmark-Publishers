@@ -152,7 +152,8 @@ em{font-style:italic;color:var(--burgundy)}
 .panel .oval::after{content:"";position:absolute;inset:7%;border:1px solid rgba(233,185,201,.14);border-radius:50%}
 .panel-label{grid-column:1 / -1;position:relative;display:flex;justify-content:space-between;align-items:center;padding-bottom:18px;border-bottom:1px solid rgba(255,255,255,.22)}
 .panel-label .eyebrow{color:var(--blush)}
-.panel-label .idx{font-family:var(--display);font-style:italic;font-size:22px;opacity:.85}
+.panel-label .idx{font-family:var(--display);font-style:italic;font-size:22px;opacity:.85;white-space:nowrap}
+.panel-label{gap:16px}
 .services{position:relative;list-style:none;margin:28px 0 0;padding:0;align-self:start;max-width:430px}
 .services li{display:flex;justify-content:space-between;gap:20px;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.14);font-size:14px;letter-spacing:.12em;text-transform:uppercase;font-weight:400}
 .services li span{color:var(--blush);font-size:12px}
@@ -162,6 +163,15 @@ em{font-style:italic;color:var(--burgundy)}
 .panel-copy p{margin:0 0 26px;font-family:var(--serif);font-size:clamp(21px,1.7vw,25px);line-height:1.4;color:#f1e6f4}
 .panel .giant{position:absolute;right:clamp(16px,2.6vw,40px);bottom:-.17em;text-align:right;margin:0;font-family:var(--display);font-weight:400;font-size:clamp(5.5rem,19vw,20rem);line-height:.8;letter-spacing:-.04em;white-space:nowrap;color:#fff;will-change:transform}
 .panel .giant em{color:var(--blush)}
+
+.panel.p-trad{background:#4a3a52}
+.panel.p-self{background:#1f3f73}
+.panel.p-hybrid{background:linear-gradient(135deg,var(--violet) 0%,#55216f 55%,var(--burgundy) 130%)}
+.panel.p-only{background:var(--deep)}
+.facts li span{font-family:var(--display);font-style:italic;font-size:19px;letter-spacing:0;text-transform:none;color:#fff}
+.facts li span.neg{color:rgba(255,255,255,.5);text-decoration:line-through;text-decoration-color:rgba(233,185,201,.6)}
+.diff-sec{padding-bottom:clamp(60px,7vw,100px)}
+.panel.p-only .giant{font-size:clamp(4.4rem,14vw,15rem)}
 
 /* ===== BOOKS — A24 grid of covers ===== */
 .books{padding:clamp(90px,10vw,140px) 0 clamp(80px,9vw,120px)}
@@ -505,62 +515,79 @@ em{font-style:italic;color:var(--burgundy)}
   </div>
 </section>
 
-<!-- ================= WHY HYBRID / DIFFERENCE ================= -->
-<section class="section compare" aria-labelledby="why-title">
-  <div class="container">
-    <div class="compare-head">
+<!-- ================= WHY HYBRID / DIFFERENCE — PANELS ================= -->
+<section class="diff-sec" aria-labelledby="why-title">
+  <div class="wwd-head">
+    <div class="container">
       <div>
         <p class="eyebrow rv">What makes us different</p>
         <h2 id="why-title" class="rv d1">Three ways to publish. <em>Only one puts authors first.</em></h2>
       </div>
-      <p class="lead rv d2">Traditional publishing takes authors' rights and profits. Self-publishing offers zero professional support. Hybrid publishing gives you both — support and ownership.</p>
+      <p class="lead rv d2">Traditional publishing takes authors' rights and profits. Self-publishing offers zero professional support. Hybrid publishing gives you both.</p>
     </div>
-
-    <div class="cards">
-      <article class="card rv">
-        <span class="tag">Option 01</span>
-        <h3>Traditional Publishing</h3>
-        <p>A professional team, but the publisher takes your rights and the majority of your profits.</p>
-        <ul>
-          <li class="no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8.5 8.5l7 7M15.5 8.5l-7 7"/></svg><span>Keep your rights</span></li>
-          <li class="no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8.5 8.5l7 7M15.5 8.5l-7 7"/></svg><span>Keep your profits</span></li>
-          <li class="yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-6.5"/></svg>Professional support</li>
-        </ul>
-      </article>
-      <article class="card rv d1">
-        <span class="tag">Option 02</span>
-        <h3>Self-Publishing</h3>
-        <p>You keep ownership, but you're on your own — with zero professional support.</p>
-        <ul>
-          <li class="yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-6.5"/></svg>Keep your rights</li>
-          <li class="yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-6.5"/></svg>Keep your profits</li>
-          <li class="no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8.5 8.5l7 7M15.5 8.5l-7 7"/></svg><span>Professional support</span></li>
-        </ul>
-      </article>
-      <article class="card featured rv d2">
-        <span class="badge">Birthmark</span>
-        <span class="tag">Option 03</span>
-        <h3>Hybrid Publishing</h3>
+  </div>
+  <div class="panels">
+    <article class="panel p-trad">
+      <span class="oval" aria-hidden="true"></span>
+      <div class="panel-label"><p class="eyebrow">Option 01 · Traditional publishing</p><span class="idx">i / iv</span></div>
+      <ul class="services facts">
+        <li>Your rights <span class="neg">Theirs</span></li>
+        <li>Your profits <span class="neg">Mostly theirs</span></li>
+        <li>Professional team <span>Yes</span></li>
+        <li>Marketing &amp; publicity <span class="neg">On you</span></li>
+      </ul>
+      <div class="panel-copy">
+        <h3>Support, <em>at a price.</em></h3>
+        <p>A professional team — but the publisher takes your rights and the majority of your profits.</p>
+      </div>
+      <p class="giant" aria-hidden="true">Traditional<em>.</em></p>
+    </article>
+    <article class="panel p-self">
+      <span class="oval" aria-hidden="true"></span>
+      <div class="panel-label"><p class="eyebrow">Option 02 · Self-publishing</p><span class="idx">ii / iv</span></div>
+      <ul class="services facts">
+        <li>Your rights <span>Yours</span></li>
+        <li>Your profits <span>Yours</span></li>
+        <li>Professional team <span class="neg">None</span></li>
+        <li>Marketing &amp; publicity <span class="neg">On you</span></li>
+      </ul>
+      <div class="panel-copy">
+        <h3>Freedom, <em>but alone.</em></h3>
+        <p>You keep ownership — and you do every job yourself, with zero professional support.</p>
+      </div>
+      <p class="giant" aria-hidden="true">Self<em>.</em></p>
+    </article>
+    <article class="panel p-hybrid">
+      <span class="oval" aria-hidden="true"></span>
+      <div class="panel-label"><p class="eyebrow">Option 03 · Birthmark hybrid publishing</p><span class="idx">iii / iv</span></div>
+      <ul class="services facts">
+        <li>Your rights <span>Yours</span></li>
+        <li>Your profits <span>Yours</span></li>
+        <li>Professional team <span>Start to finish</span></li>
+        <li>Marketing &amp; publicity <span>Built in</span></li>
+      </ul>
+      <div class="panel-copy">
+        <h3>Support <em>and</em> ownership.</h3>
         <p>The fairest, most lucrative and most ethical option for authors.</p>
-        <ul>
-          <li class="yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-6.5"/></svg>Keep your rights</li>
-          <li class="yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-6.5"/></svg>Keep your profits</li>
-          <li class="yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-6.5"/></svg>Professional support</li>
-          <li class="yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-6.5"/></svg>Marketing &amp; publicity included</li>
-        </ul>
-        <a href="#" class="link">See how it works →</a>
-      </article>
-    </div>
-
-    <div class="only rv">
-      <span class="num" aria-hidden="true">02</span>
-      <div>
+        <a href="#" class="btn btn-ghost">See How It Works <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <p class="giant" aria-hidden="true">Hybrid<em>.</em></p>
+    </article>
+    <article class="panel p-only">
+      <span class="oval" aria-hidden="true"></span>
+      <div class="panel-label"><p class="eyebrow">02 · Truly full service</p><span class="idx">iv / iv</span></div>
+      <ul class="services facts">
+        <li>Publishing <span>Included</span></li>
+        <li>Marketing <span>Included</span></li>
+        <li>Publicity <span>Included</span></li>
+      </ul>
+      <div class="panel-copy">
         <h3>The only hybrid publisher that also <em>markets and publicizes</em> your book.</h3>
         <p>Other hybrid publishers stop at publishing. We're truly full service.</p>
-        <div class="chips"><span>Publishing</span><span>Marketing</span><span>Publicity</span></div>
+        <a href="#" class="btn btn-ghost">Our Story <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
-      <a href="#" class="btn btn-primary">Our Story <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-    </div>
+      <p class="giant" aria-hidden="true">Full service<em>.</em></p>
+    </article>
   </div>
 </section>
 
